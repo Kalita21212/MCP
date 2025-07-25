@@ -84,6 +84,7 @@ const Contact: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">Nama Lengkap</label>
               <input 
                 type="text" 
+                id="nama"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="Masukkan nama lengkap"
               />
@@ -93,6 +94,7 @@ const Contact: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
               <input 
                 type="email" 
+                id="email"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="nama@email.com"
               />
@@ -102,6 +104,7 @@ const Contact: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">No. Telepon</label>
               <input 
                 type="tel" 
+                id="telepon"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="08xxxxxxxxxx"
               />
@@ -111,6 +114,7 @@ const Contact: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">Subjek</label>
               <input 
                 type="text" 
+                id="subjek"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="Subjek pesan"
               />
@@ -120,6 +124,7 @@ const Contact: React.FC = () => {
               <label className="block text-sm font-medium text-gray-700 mb-2">Pesan</label>
               <textarea 
                 rows={4}
+                id="pesan"
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
                 placeholder="Tulis pesan Anda di sini..."
               ></textarea>
@@ -127,6 +132,28 @@ const Contact: React.FC = () => {
             
             <button 
               type="submit"
+              onClick={(e) => {
+                e.preventDefault();
+                const nama = (document.getElementById('nama') as HTMLInputElement)?.value;
+                const email = (document.getElementById('email') as HTMLInputElement)?.value;
+                const telepon = (document.getElementById('telepon') as HTMLInputElement)?.value;
+                const subjek = (document.getElementById('subjek') as HTMLInputElement)?.value;
+                const pesan = (document.getElementById('pesan') as HTMLTextAreaElement)?.value;
+                
+                if (!nama || !email || !telepon || !subjek || !pesan) {
+                  alert('Mohon lengkapi semua field yang diperlukan.');
+                  return;
+                }
+                
+                alert(`Terima kasih ${nama}! Pesan Anda telah dikirim. Kami akan segera menghubungi Anda melalui ${email} atau ${telepon}.`);
+                
+                // Reset form
+                (document.getElementById('nama') as HTMLInputElement).value = '';
+                (document.getElementById('email') as HTMLInputElement).value = '';
+                (document.getElementById('telepon') as HTMLInputElement).value = '';
+                (document.getElementById('subjek') as HTMLInputElement).value = '';
+                (document.getElementById('pesan') as HTMLTextAreaElement).value = '';
+              }}
               className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition-colors font-medium"
             >
               Kirim Pesan

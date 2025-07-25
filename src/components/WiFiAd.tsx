@@ -53,7 +53,12 @@ const WiFiAd: React.FC = () => {
               </div>
             </div>
             
-            <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+            <button 
+              className="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+              onClick={() => {
+                alert('Untuk pendaftaran WiFi RT, silakan hubungi:\n\n📞 0812-3456-7890 (Pak RT)\n📱 WhatsApp: 0856-7890-1234\n📧 wifi.rt003@gmail.com\n\nTim kami akan segera menghubungi Anda untuk proses instalasi.');
+              }}
+            >
               Daftar Sekarang
             </button>
           </div>

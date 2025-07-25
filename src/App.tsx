@@ -22,7 +22,7 @@ function App() {
         return (
           <>
             <Hero />
-            <Dashboard />
+            <Dashboard setCurrentPage={setCurrentPage} />
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 py-8">
               <Announcements />
               <div className="bg-white rounded-lg shadow-md p-6">
@@ -82,7 +82,7 @@ function App() {
         return (
           <>
             <Hero />
-            <Dashboard />
+            <Dashboard setCurrentPage={setCurrentPage} />
           </>
         );
     }

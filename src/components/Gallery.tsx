@@ -87,7 +87,13 @@ const Gallery: React.FC = () => {
       {/* Gallery Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredItems.map((item) => (
-          <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+          <div 
+            key={item.id} 
+            className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer"
+            onClick={() => {
+              alert(`Melihat detail: ${item.title}\n\nDeskripsi: ${item.description}\nTanggal: ${item.date}\nKategori: ${item.category}`);
+            }}
+          >
             <div className="relative">
               <img 
                 src={item.image} 

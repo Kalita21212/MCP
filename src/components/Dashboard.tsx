@@ -1,7 +1,11 @@
 import React from 'react';
 import { Users, Calendar, Bell, TrendingUp, Home, Heart, Shield, Briefcase } from 'lucide-react';
 
-const Dashboard: React.FC = () => {
+interface DashboardProps {
+  setCurrentPage?: (page: string) => void;
+}
+
+const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
   const stats = [
     {
       title: 'Total KK',
@@ -49,6 +53,7 @@ const Dashboard: React.FC = () => {
       color: 'bg-red-500',
       iconBg: 'bg-red-100',
       iconColor: 'text-red-600'
+      action: () => setCurrentPage?.('kontak')
     },
     {
       title: 'Ajukan Surat',
@@ -57,6 +62,7 @@ const Dashboard: React.FC = () => {
       color: 'bg-indigo-500',
       iconBg: 'bg-indigo-100',
       iconColor: 'text-indigo-600'
+      action: () => setCurrentPage?.('layanan')
     },
     {
       title: 'Kegiatan Sosial',
@@ -65,6 +71,7 @@ const Dashboard: React.FC = () => {
       color: 'bg-pink-500',
       iconBg: 'bg-pink-100',
       iconColor: 'text-pink-600'
+      action: () => setCurrentPage?.('kegiatan')
     },
     {
       title: 'Info Fasilitas',
@@ -73,6 +80,7 @@ const Dashboard: React.FC = () => {
       color: 'bg-teal-500',
       iconBg: 'bg-teal-100',
       iconColor: 'text-teal-600'
+      action: () => setCurrentPage?.('profil-rt')
     }
   ];
 
@@ -108,7 +116,11 @@ const Dashboard: React.FC = () => {
           {quickActions.map((action, index) => {
             const Icon = action.icon;
             return (
-              <div key={index} className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group border border-gray-100">
+              <div 
+                key={index} 
+                className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-all duration-300 cursor-pointer group border border-gray-100"
+                onClick={action.action}
+              >
                 <div className={`w-12 h-12 ${action.iconBg} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <Icon className={`h-6 w-6 ${action.iconColor}`} />
                 </div>

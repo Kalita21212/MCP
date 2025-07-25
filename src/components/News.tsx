@@ -104,7 +104,12 @@ const News: React.FC = () => {
                     <User className="h-4 w-4 ml-4 mr-2" />
                     <span>{featuredNews.author}</span>
                   </div>
-                  <button className="flex items-center text-green-600 hover:text-green-700 font-medium">
+                  <button 
+                    className="flex items-center text-green-600 hover:text-green-700 font-medium"
+                    onClick={() => {
+                      alert(`Membaca artikel: "${featuredNews.title}"`);
+                    }}
+                  >
                     Baca Selengkapnya
                     <ArrowRight className="h-4 w-4 ml-1" />
                   </button>
@@ -147,7 +152,12 @@ const News: React.FC = () => {
                 </div>
               </div>
               
-              <button className="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:shadow-md transition-all duration-200">
+              <button 
+                className="w-full bg-gradient-to-r from-green-500 to-blue-600 text-white py-2 px-4 rounded-lg text-sm font-medium hover:shadow-md transition-all duration-200"
+                onClick={() => {
+                  alert(`Membaca artikel: "${item.title}"`);
+                }}
+              >
                 Baca Selengkapnya
               </button>
             </div>
@@ -162,7 +172,12 @@ const News: React.FC = () => {
           <p className="text-lg mb-6 opacity-90">
             Kirimkan informasi atau berita menarik seputar kegiatan RT untuk dipublikasikan
           </p>
-          <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          <button 
+            className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            onClick={() => {
+              alert('Silakan kirim berita atau informasi melalui email rt003rw05@gmail.com atau hubungi pengurus RT.');
+            }}
+          >
             Kirim Berita
           </button>
         </div>

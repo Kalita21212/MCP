@@ -217,7 +217,12 @@ const Activities: React.FC = () => {
               
               <div className="flex items-center justify-between">
                 <span className="text-xs text-gray-500">Oleh: {activity.organizer}</span>
-                <button className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-all duration-200">
+                <button 
+                  className="bg-gradient-to-r from-green-500 to-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:shadow-md transition-all duration-200"
+                  onClick={() => {
+                    alert(`Pendaftaran untuk kegiatan "${activity.title}" akan segera dibuka. Silakan hubungi pengurus RT untuk informasi lebih lanjut.`);
+                  }}
+                >
                   Daftar
                 </button>
               </div>
@@ -242,7 +247,12 @@ const Activities: React.FC = () => {
         <p className="text-lg mb-6 opacity-90">
           Sampaikan usulan kegiatan Anda kepada pengurus RT untuk kemajuan bersama
         </p>
-        <button className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+        <button 
+          className="bg-white text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+          onClick={() => {
+            alert('Silakan hubungi pengurus RT melalui kontak yang tersedia untuk mengajukan kegiatan baru.');
+          }}
+        >
           Ajukan Kegiatan
         </button>
       </div>

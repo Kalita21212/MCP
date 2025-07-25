@@ -20,11 +20,15 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     { id: 'kontak', label: 'Kontak', icon: Phone },
   ];
 
+  const handleMenuClick = (pageId: string) => {
+    setCurrentPage(pageId);
+    setIsMobileMenuOpen(false);
+  };
   return (
     <header className="bg-white shadow-lg border-b sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center cursor-pointer" onClick={() => setCurrentPage('beranda')}>
+          <div className="flex items-center cursor-pointer" onClick={() => handleMenuClick('beranda')}>
             <div className="flex-shrink-0">
               <div className="flex items-center">
                 <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-600 rounded-lg flex items-center justify-center shadow-md">
@@ -46,7 +50,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                 return (
                   <button
                     key={item.id}
-                    onClick={() => setCurrentPage(item.id)}
+                    onClick={() => handleMenuClick(item.id)}
                     className={`px-3 py-2 rounded-lg text-sm font-medium flex items-center space-x-1 transition-all duration-200 ${
                       currentPage === item.id
                         ? 'bg-gradient-to-r from-green-500 to-blue-600 text-white shadow-md'
@@ -87,8 +91,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                 <button
                   key={item.id}
                   onClick={() => {
-                    setCurrentPage(item.id);
-                    setIsMobileMenuOpen(false);
+                    handleMenuClick(item.id);
                   }}
                   className={`w-full text-left px-3 py-2 rounded-md text-base font-medium flex items-center space-x-2 transition-colors ${
                     currentPage === item.id

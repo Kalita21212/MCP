@@ -41,15 +41,24 @@ const Footer: React.FC = () => {
               Membangun komunitas yang harmonis, gotong royong, dan sejahtera bersama melalui berbagai program dan kegiatan yang bermanfaat.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors">
+              <button 
+                onClick={() => alert('Mengunjungi halaman Facebook RT 003 Maju Jaya')}
+                className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
+              >
                 <Facebook className="h-4 w-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors">
+              </button>
+              <button 
+                onClick={() => alert('Mengunjungi halaman Instagram @rt003majujaya')}
+                className="w-8 h-8 bg-pink-600 rounded-full flex items-center justify-center hover:bg-pink-700 transition-colors"
+              >
                 <Instagram className="h-4 w-4" />
-              </a>
-              <a href="#" className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors">
+              </button>
+              <button 
+                onClick={() => alert('Bergabung dengan WhatsApp Group RT: bit.ly/wa-rt003')}
+                className="w-8 h-8 bg-green-600 rounded-full flex items-center justify-center hover:bg-green-700 transition-colors"
+              >
                 <MessageCircle className="h-4 w-4" />
-              </a>
+              </button>
             </div>
           </div>
 
@@ -59,9 +68,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href={link.href} className="text-gray-300 hover:text-white transition-colors text-sm">
+                  <button 
+                    onClick={() => alert(`Navigasi ke ${link.name} - Fitur akan segera tersedia`)}
+                    className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                  >
                     {link.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -73,9 +85,12 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               {services.map((service, index) => (
                 <li key={index}>
-                  <a href={service.href} className="text-gray-300 hover:text-white transition-colors text-sm">
+                  <button 
+                    onClick={() => alert(`Informasi layanan ${service.name} - Hubungi pengurus RT untuk detail lebih lanjut`)}
+                    className="text-gray-300 hover:text-white transition-colors text-sm text-left"
+                  >
                     {service.name}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
