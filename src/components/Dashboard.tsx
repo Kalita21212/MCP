@@ -52,7 +52,7 @@ const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
       icon: Shield,
       color: 'bg-red-500',
       iconBg: 'bg-red-100',
-      iconColor: 'text-red-600'
+      iconColor: 'text-red-600',
       action: () => setCurrentPage?.('kontak')
     },
     {
@@ -61,7 +61,7 @@ const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
       icon: Briefcase,
       color: 'bg-indigo-500',
       iconBg: 'bg-indigo-100',
-      iconColor: 'text-indigo-600'
+      iconColor: 'text-indigo-600',
       action: () => setCurrentPage?.('layanan')
     },
     {
@@ -70,7 +70,7 @@ const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
       icon: Heart,
       color: 'bg-pink-500',
       iconBg: 'bg-pink-100',
-      iconColor: 'text-pink-600'
+      iconColor: 'text-pink-600',
       action: () => setCurrentPage?.('kegiatan')
     },
     {
@@ -79,7 +79,7 @@ const Dashboard: React.FC<DashboardProps> = ({ setCurrentPage }) => {
       icon: Home,
       color: 'bg-teal-500',
       iconBg: 'bg-teal-100',
-      iconColor: 'text-teal-600'
+      iconColor: 'text-teal-600',
       action: () => setCurrentPage?.('profil-rt')
     }
   ];
